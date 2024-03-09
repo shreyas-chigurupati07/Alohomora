@@ -17,7 +17,7 @@ This project is divided into two main parts: "Shake my Boundary," which explores
 ## Results
 
 The project successfully enhances boundary detection using a novel, probability-based approach and provides an in-depth analysis of deep learning models, demonstrating their strengths and weaknesses in object classification tasks.
-[Color_1](https://github.com/shreyas-chigurupati07/Alohomora/assets/84034817/fd7b86f9-f6ab-48cb-bf4e-d0f38682d315)
+!![Color_1](https://github.com/shreyas-chigurupati07/Alohomora/assets/84034817/fd7b86f9-f6ab-48cb-bf4e-d0f38682d315)
 !![Texton_1](https://github.com/shreyas-chigurupati07/Alohomora/assets/84034817/e5d73300-4ab4-42cd-b455-178f913b1e16)
 
 
