@@ -217,7 +217,7 @@ def plot_losses(history):
     plt.ylabel('loss')
     plt.title('Train Loss vs. No. of epochs')
     # plt.show()  
-    plt.savefig('/home/uthira/usivaraman_hw0/Phase2/Code/Results/Basic_Loss.png')
+    plt.savefig('/home/shreyas/shreyas_hw0/Phase2/Code/Results/Basic_Loss.png')
 
 def plot_accuracies(history):
     accuracies = [x['acc'] for x in history]
@@ -226,7 +226,7 @@ def plot_accuracies(history):
     plt.ylabel('accuracy')
     plt.title(' Train Accuracy vs. No. of epochs')
     # plt.show()   
-    plt.savefig('/home/uthira/usivaraman_hw0/Phase2/Code/Results/Basic_Acc.png') 
+    plt.savefig('/home/shreyas/shreyas_hw0/Phase2/Code/Results/Basic_Acc.png') 
 
 def main():
     """
@@ -237,7 +237,7 @@ def main():
     """
     # Parse Command Line arguments
     Parser = argparse.ArgumentParser()
-    Parser.add_argument('--CheckPointPath', default='/home/uthira/usivaraman_hw0/Phase2/Code/Checkpoints/Train/', help='Path to save Checkpoints, Default: ../Checkpoints/')
+    Parser.add_argument('--CheckPointPath', default='/home/shreyas/shreyas_hw0/Phase2/Code/Checkpoints/Train/', help='Path to save Checkpoints, Default: ../Checkpoints/')
     Parser.add_argument('--NumEpochs', type=int, default=1, help='Number of Epochs to Train for, Default:50')
     Parser.add_argument('--DivTrain', type=int, default=1, help='Factor to reduce Train data by per epoch, Default:1')
     Parser.add_argument('--MiniBatchSize', type=int, default=256, help='Size of the MiniBatch to use, Default:1')
@@ -264,7 +264,7 @@ def main():
     print("CheckPointPath :",CheckPointPath)
     print("LogsPath:",LogsPath)
     # Setup all needed parameters including file reading
-    DirNamesTrain, SaveCheckPoint, ImageSize, NumTrainSamples, TrainLabels, NumClasses = SetupAll("/home/uthira/usivaraman_hw0/Phase2/Code/CIFAR10/Train/",CheckPointPath)
+    DirNamesTrain, SaveCheckPoint, ImageSize, NumTrainSamples, TrainLabels, NumClasses = SetupAll("/home/shreyas/shreyas_hw0/Phase2/Code/CIFAR10/Train/",CheckPointPath)
 
 
     # Find Latest Checkpoint File
