@@ -201,8 +201,8 @@ def main():
 
     # Parse Command Line arguments
     Parser = argparse.ArgumentParser()
-    Parser.add_argument('--ModelPath', dest='ModelPath', default='/home/uthira/usivaraman_hw0/Phase2/Code/Checkpoints/Basic/447model.ckpt', help='Path to load latest model from, Default:ModelPath')
-    Parser.add_argument('--LabelsPath', dest='LabelsPath', default='/home/uthira/usivaraman_hw0/Phase2/Code/TxtFiles/LabelsTest.txt', help='Path of labels file, Default:./TxtFiles/LabelsTest.txt')
+    Parser.add_argument('--ModelPath', dest='ModelPath', default='/home/shreyas/shreyas_hw0/Phase2/Code/Checkpoints/Basic/447model.ckpt', help='Path to load latest model from, Default:ModelPath')
+    Parser.add_argument('--LabelsPath', dest='LabelsPath', default='/home/shreyas/shreyas_hw0/Phase2/Code/TxtFiles/LabelsTest.txt', help='Path of labels file, Default:./TxtFiles/LabelsTest.txt')
     Args = Parser.parse_args()
     ModelPath = Args.ModelPath
     LabelsPath = Args.LabelsPath
@@ -224,7 +224,7 @@ def main():
     LabelsTrue, LabelsPred = ReadLabels(LabelsPath, LabelsPathPred)
     Acc, CM = ConfusionMatrix(label_set, pred_set)
     sns.heatmap(CM, annot=True, fmt="d")
-    plt.savefig('/home/uthira/usivaraman_hw0/Phase2/Code/Results/Basic.png')
+    plt.savefig('/home/shreyas/shreyas_hw0/Phase2/Code/Results/Basic.png')
     print("Test Accuracy = ", Acc, "%")
      
 if __name__ == '__main__':
