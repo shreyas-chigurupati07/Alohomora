@@ -174,7 +174,7 @@ def DOG_FilterBank(orientation_values, scale_values, kernel_size):
             axs[i, j].axis('off')
 
     # plot.show()
-    # plot.savefig("/home/uthira/usivaraman_hw0/Phase1/Results/DOG.png")
+    # plot.savefig("/home/shreyas/shreyas/Phase1/Results/DOG.png")
     plot.close()
     return DOG
 
@@ -314,7 +314,7 @@ def Gabor_FilterBank(orientation_values, scale_values, frequency_values, kernel_
             axs[i, j].imshow(Gabor[i*orientation_values+j], cmap='gray')
             axs[i, j].axis('off')
     # plot.show()
-    # plot.savefig("/home/uthira/usivaraman_hw0/Phase1/Results/Gabor.png")
+    # plot.savefig("/home/shreyas/shreyas/Phase1/Results/Gabor.png")
     plot.close()
     return Gabor
 
@@ -333,7 +333,7 @@ def HalfDisk(radius, angle):
     # Half_disk_masks = x**2+y**2 <= 3**2
     # Half_disk_masks = np.array(Half_disk_masks)
     # print(Half_disk_masks)
-    # print_filterbank_results_matplot(Half_disk_masks,'/home/uthira/CV/Cvis_HW0/Phase1/Results/Filter/HalfDiskMasks.png', 8)
+    # print_filterbank_results_matplot(Half_disk_masks,'/home/shreyas/CV/Cvis_HW0/Phase1/Results/Filter/HalfDiskMasks.png', 8)
     size = 2*radius + 1
     centre = radius
     half_disk = np.zeros([size, size])
@@ -392,15 +392,15 @@ Main Function
 def main():
     """Derivative of Gaussian Filter"""
     DOG_FB = DOG_FilterBank(18, [3, 3], 36)
-    # print_filterbank_results_matplot(DOG_FB,'/home/uthira/CV/Cvis_HW0/Phase1/Results/Filter/DOG.png',8)
+    # print_filterbank_results_matplot(DOG_FB,'/home/shreyas/CV/Cvis_HW0/Phase1/Results/Filter/DOG.png',8)
 
     """LM Filter"""
     LM_FB_small = LM_FilterBank(6, [1, np.sqrt(2), 2, 2*np.sqrt(2)], 49)
     LM_FB_large = LM_FilterBank(6, [np.sqrt(2), 2, 2*np.sqrt(2), 4], 49)
-    # print_filterbank_results_matplot(LM_FB_small,'/home/uthira/CV/Cvis_HW0/Phase1/Results/Filter/LM_small.png',12)
-    # print_filterbank_results_matplot(LM_FB_large,'/home/uthira/CV/Cvis_HW0/Phase1/Results/Filter/LM_large.png',12)
+    # print_filterbank_results_matplot(LM_FB_small,'/home/shreyas/CV/Cvis_HW0/Phase1/Results/Filter/LM_small.png',12)
+    # print_filterbank_results_matplot(LM_FB_large,'/home/shreyas/CV/Cvis_HW0/Phase1/Results/Filter/LM_large.png',12)
     LM_FB = LM_FB_small + LM_FB_large
-    # print_filterbank_results_matplot(LM_FB,'/home/uthira/CV/Cvis_HW0/Phase1/Results/Filter/LM.png',12)
+    # print_filterbank_results_matplot(LM_FB,'/home/shreyas/CV/Cvis_HW0/Phase1/Results/Filter/LM.png',12)
 
     fig, axs = plot.subplots(8, 6, figsize=(6, 8))
     for i in range(8):
@@ -412,7 +412,7 @@ def main():
 
     """Gabor Filter"""
     Gabor_FB = Gabor_FilterBank(6, [20, 45], [3, 4, 6], 49)
-    # print_filterbank_results_matplot(Gabor_FB,'/home/uthira/CV/Cvis_HW0/Phase1/Results/Filter/Gabor.png',8)
+    # print_filterbank_results_matplot(Gabor_FB,'/home/shreyas/CV/Cvis_HW0/Phase1/Results/Filter/Gabor.png',8)
 
     """
 		Total Filter Bank 
@@ -424,8 +424,8 @@ def main():
     half_disk_filter_bank = halfdiskFilters([2, 5, 10, 20, 30], 16)
     index = 0
 
-    images_folder = "/home/uthira/usivaraman_hw0/Phase1/Code/BSDS500/Images/"
-    results_folder = "/home/uthira/usivaraman_hw0/Phase1/Code/Results/"
+    images_folder = "/home/shreyas/shreyas/Phase1/Code/BSDS500/Images/"
+    results_folder = "/home/shreyas/shreyas/Phase1/Code/Results/"
 
     image_files = os.listdir(images_folder)
     for img_name in image_files:
@@ -504,7 +504,7 @@ def main():
         # plot.imshow(texton_image)
         # plot.show()
         # plot.close()
-        # plot.imsave(os.path.join("/home/uthira/CV/Cvis_HW0/Phase1/Results/Textron_map/", "TextonMap_"+str(index)) , texton_image)
+        # plot.imsave(os.path.join("/home/shreyas/CV/Cvis_HW0/Phase1/Results/Textron_map/", "TextonMap_"+str(index)) , texton_image)
 
         """
 			Generate Brightness Map
@@ -590,9 +590,9 @@ def main():
         print("generating pb lite output..")
         # for i in range(len(images)):
         sobel_pb = cv2.imread(
-            "/home/uthira/usivaraman_hw0/Phase1/Code/BSDS500/SobelBaseline/" + img_name)
+            "/home/shreyas/shreyas/Phase1/Code/BSDS500/SobelBaseline/" + img_name)
         canny_pb = cv2.imread(
-            "/home/uthira/usivaraman_hw0/Phase1/Code/BSDS500/CannyBaseline/" + img_name)
+            "/home/shreyas/shreyas/Phase1/Code/BSDS500/CannyBaseline/" + img_name)
         pb_edge = pblite_edges(T_g, B_g, C_g, canny_pb, sobel_pb, [0.5, 0.5])
         print("Final Output")
         # plot.imshow(pb_edge, cmap = "gray")
@@ -602,7 +602,7 @@ def main():
         # cv2.imwrite(os.path.join(results_folder , image_name), pb_edge)
         plot.imsave(os.path.join(results_folder, image_name),
                     pb_edge, cmap="gray")
-        # /home/uthira/CV/Cvis_HW0/Phase1/Results/Pblite/Figure_1.png
+        # /home/shreyas/CV/Cvis_HW0/Phase1/Results/Pblite/Figure_1.png
 
         index = index + 1
 
